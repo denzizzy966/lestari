@@ -1,0 +1,248 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-26 13:31:43.922546",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "id",
+  "id_operator",
+  "nama_operator",
+  "operator",
+  "column_break_5",
+  "tanggal",
+  "kelompok",
+  "kotak",
+  "column_break_10",
+  "rph_lilin",
+  "kadar",
+  "label_piring",
+  "stick_pohon",
+  "column_break_15",
+  "total_qty",
+  "daftar_product",
+  "catatan",
+  "section_break_19",
+  "admin_lilin",
+  "employee",
+  "column_break_23",
+  "entry_date",
+  "section_break_22",
+  "item_button",
+  "column_break_24",
+  "karet_pilihan",
+  "column_break_26",
+  "item_direct_casting",
+  "item_section",
+  "items",
+  "karet_pilihan_section",
+  "list_karet"
+ ],
+ "fields": [
+  {
+   "default": "-",
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "id_operator",
+   "fieldtype": "Data",
+   "label": "ID OPERATOR"
+  },
+  {
+   "fieldname": "kadar",
+   "fieldtype": "Link",
+   "label": "KADAR",
+   "options": "Data Logam"
+  },
+  {
+   "fieldname": "label_piring",
+   "fieldtype": "Link",
+   "label": "LABEL PIRING",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "-",
+   "fieldname": "nama_operator",
+   "fieldtype": "Data",
+   "label": "NAMA OPERATOR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "OPERATOR",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "tanggal",
+   "fieldtype": "Date",
+   "label": "TANGGAL"
+  },
+  {
+   "fieldname": "kelompok",
+   "fieldtype": "Int",
+   "label": "KELOMPOK"
+  },
+  {
+   "fieldname": "rph_lilin",
+   "fieldtype": "Link",
+   "label": "RPH LILIN",
+   "options": "RPH Lilin"
+  },
+  {
+   "fieldname": "stick_pohon",
+   "fieldtype": "Link",
+   "label": "STICK POHON",
+   "options": "Data Jenis Sprue Utama"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_qty",
+   "fieldtype": "Int",
+   "label": "TOTAL QTY",
+   "read_only": 1
+  },
+  {
+   "fieldname": "kotak",
+   "fieldtype": "Int",
+   "label": "KOTAK"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "catatan",
+   "fieldtype": "Small Text",
+   "label": "CATATAN"
+  },
+  {
+   "fieldname": "admin_lilin",
+   "fieldtype": "Data",
+   "label": "Admin Lilin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "entry_date",
+   "fieldtype": "Datetime",
+   "label": "ENTRY DATE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Item"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "SPKO Inject Lilin Item"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "karet_pilihan",
+   "fieldtype": "HTML",
+   "label": "Karet Pilihan",
+   "options": "<button class=\"btn btn-default btn-block\" style=\"margin-bottom: 10px;\">Karet Pilihan</button>"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_direct_casting",
+   "fieldtype": "HTML",
+   "label": "Item Direct Casting",
+   "options": "<button class=\"btn btn-default btn-block\" style=\"margin-bottom: 10px;\">Item Direct Casting</button>"
+  },
+  {
+   "fieldname": "karet_pilihan_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Karet Pilihan"
+  },
+  {
+   "fieldname": "list_karet",
+   "fieldtype": "Table",
+   "label": "List Karet",
+   "options": "SPKO Inject Lilin Karet"
+  },
+  {
+   "fieldname": "item_button",
+   "fieldtype": "HTML",
+   "label": "Item",
+   "options": "<button class=\"btn btn-default btn-block\" style=\"margin-bottom: 10px; background-color: #913030;\">Item</button>"
+  },
+  {
+   "fieldname": "daftar_product",
+   "fieldtype": "HTML",
+   "label": "Daftar Product",
+   "options": "<button class=\"btn btn-default btn-block\" style=\"margin-bottom: 15px; margin-top: 40px; background-color: #913030;\">Daftar Product</button>"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-20 11:38:40.924401",
+ "modified_by": "Administrator",
+ "module": "Lestari",
+ "name": "SPKO Inject Lilin",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

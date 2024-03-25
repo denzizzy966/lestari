@@ -1,0 +1,351 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-08-23 10:01:09.196610",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "no_nota",
+  "customer",
+  "subcustomer",
+  "customer_group",
+  "territory",
+  "deposit_type",
+  "type_emas",
+  "piutang_gold",
+  "account_piutang",
+  "janji_bayar",
+  "sisa_janji",
+  "total_janji",
+  "tutupan",
+  "terima_barang",
+  "sales_bundle",
+  "warehouse",
+  "is_convert",
+  "deposit_payment",
+  "gold_payment",
+  "gold_invoice",
+  "column_break_2",
+  "posting_date",
+  "posting_time",
+  "column_break_4",
+  "source",
+  "total_value_converted",
+  "idr_deposit_section",
+  "get_janji_bayar",
+  "list_janji_bayar",
+  "idr_deposit",
+  "total_idr_deposit",
+  "idr_left",
+  "stock_deposit_section",
+  "stock_deposit",
+  "total_gold_deposit",
+  "gold_left",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Kode Seri",
+   "no_copy": 1,
+   "options": "CD-GOLD-.YYYY.-\nCD-IDR-.YYYY.-\nCD-STOCK-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "subcustomer.parent_customer",
+   "fetch_if_empty": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_group",
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.territory",
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "is_convert",
+   "fieldname": "column_break_4",
+   "fieldtype": "Section Break",
+   "label": "Conversion"
+  },
+  {
+   "fieldname": "idr_deposit_section",
+   "fieldtype": "Section Break",
+   "label": "IDR Deposit"
+  },
+  {
+   "depends_on": "eval:doc.deposit_type==\"IDR\"",
+   "fieldname": "idr_deposit",
+   "fieldtype": "Table",
+   "label": "IDR Deposit",
+   "options": "IDR Payment"
+  },
+  {
+   "depends_on": "eval:doc.deposit_type==\"IDR\"",
+   "fieldname": "total_idr_deposit",
+   "fieldtype": "Currency",
+   "label": "Total IDR Deposit",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.deposit_type==\"IDR\"",
+   "fieldname": "idr_left",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "IDR Deposit Balance",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.deposit_type==\"Emas\"",
+   "fieldname": "stock_deposit_section",
+   "fieldtype": "Section Break",
+   "label": "Stock Deposit"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "stock_deposit",
+   "fieldtype": "Table",
+   "label": "Stock Deposit",
+   "options": "Stock Payment",
+   "read_only_depends_on": "is_convert"
+  },
+  {
+   "fieldname": "total_gold_deposit",
+   "fieldtype": "Float",
+   "label": "Total Gold Deposit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gold_left",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Gold Deposit Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Customer Deposit",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "deposit_type",
+   "fieldtype": "Select",
+   "label": "Deposit Type",
+   "options": "\nEmas\nIDR",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.deposit_type==\"Emas\"",
+   "fieldname": "is_convert",
+   "fieldtype": "Check",
+   "label": "Is Convert"
+  },
+  {
+   "depends_on": "eval:doc.deposit_type==\"Emas\"",
+   "fieldname": "tutupan",
+   "fieldtype": "Currency",
+   "label": "Nilai Tutupan / Emas",
+   "mandatory_depends_on": "eval:doc.deposit_type==\"Emas\""
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "sales_bundle.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.deposit_type==\"Emas\" && doc.is_convert==0",
+   "fieldname": "terima_barang",
+   "fieldtype": "Check",
+   "label": "Terima Barang",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_bundle",
+   "fieldtype": "Link",
+   "label": "Sales Bundle",
+   "options": "Sales Stock Bundle",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_payment",
+   "fieldtype": "Check",
+   "label": "Deposit Karena Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gold_payment",
+   "fieldtype": "Link",
+   "label": "Gold Payment",
+   "options": "Gold Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subcustomer",
+   "fieldtype": "Link",
+   "label": "Subcustomer",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "is_convert",
+   "fieldname": "source",
+   "fieldtype": "Table",
+   "label": "Customer Deposit Source",
+   "mandatory_depends_on": "is_convert",
+   "options": "Customer Deposit Convert"
+  },
+  {
+   "fieldname": "total_value_converted",
+   "fieldtype": "Currency",
+   "label": "Total Value Converted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "janji_bayar",
+   "fieldtype": "Link",
+   "label": "Janji Bayar",
+   "options": "Janji Bayar",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "janji_bayar.sisa_janji",
+   "fieldname": "sisa_janji",
+   "fieldtype": "Currency",
+   "label": "Sisa Janji",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "janji_bayar.total_bayar",
+   "fieldname": "total_janji",
+   "fieldtype": "Currency",
+   "label": "Total Janji",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.deposit_type == \"IDR\"",
+   "fieldname": "account_piutang",
+   "fieldtype": "Link",
+   "label": "Account Piutang",
+   "options": "Account"
+  },
+  {
+   "depends_on": "eval: doc.deposit_type == \"IDR\"",
+   "fieldname": "list_janji_bayar",
+   "fieldtype": "Table",
+   "label": "List Janji Bayar",
+   "options": "Pembayaran Janji Bayar"
+  },
+  {
+   "fieldname": "get_janji_bayar",
+   "fieldtype": "Button",
+   "label": "Get Janji Bayar"
+  },
+  {
+   "fieldname": "type_emas",
+   "fieldtype": "Link",
+   "label": "Kurs Emas",
+   "options": "Basic Nilai Tukar Emas"
+  },
+  {
+   "fetch_from": "type_emas.piutang_emas",
+   "fieldname": "piutang_gold",
+   "fieldtype": "Link",
+   "label": "Piutang Emas",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "no_nota",
+   "fieldtype": "Int",
+   "in_standard_filter": 1,
+   "label": "No Nota"
+  },
+  {
+   "fieldname": "gold_invoice",
+   "fieldtype": "Link",
+   "label": "Gold Invoice",
+   "options": "Gold Invoice"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-09 13:30:21.583239",
+ "modified_by": "Administrator",
+ "module": "Gold Selling",
+ "name": "Customer Deposit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

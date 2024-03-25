@@ -1,0 +1,315 @@
+{
+ "_liked_by": "[]",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2022-09-06 20:42:44.900916",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Gold Selling",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Data",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "item",
+   "link_to": "Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gold Rates",
+   "link_to": "Gold Rates",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Rates",
+   "link_to": "Customer Rates",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Group Rates",
+   "link_to": "Customer Group Rates",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gold Stock Category",
+   "link_to": "Gold Selling Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gold Selling Settings",
+   "link_to": "Gold Selling Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gold Invoice",
+   "link_to": "Gold Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gold Payment",
+   "link_to": "Gold Payment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Deposit",
+   "link_to": "Customer Deposit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Payment Return",
+   "link_to": "Customer Payment Return",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Form Order",
+   "link_to": "Form Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Update Bundle Stock",
+   "link_to": "Update Bundle Stock",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Stock Bundle",
+   "link_to": "Sales Stock Bundle",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Serah Terima Payment Stock",
+   "link_to": "Serah Terima Payment Stock",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Serah Terima Payment Cash",
+   "link_to": "Serah Terima Payment Cash",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-01-08 09:54:30.016428",
+ "modified_by": "dendro@lms.com",
+ "module": "Gold Selling",
+ "name": "Gold Selling",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Gold Invoice",
+   "link_to": "Gold Invoice",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Pembayaran Penjualan",
+   "link_to": "Gold Payment",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Customer Deposit",
+   "link_to": "Customer Deposit",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Customer Payment Return",
+   "link_to": "Customer Payment Return",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Pengembalian",
+   "link_to": "Pengembalian Deposit",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Janji Bayar",
+   "link_to": "Janji Bayar",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Sales Stock Bundle",
+   "link_to": "Sales Stock Bundle",
+   "type": "DocType"
+  },
+  {
+   "color": "#CB2929",
+   "doc_view": "List",
+   "label": "Serah Terima Payment Cash",
+   "link_to": "Serah Terima Payment Cash",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Serah Terima Payment Stock",
+   "link_to": "Serah Terima Payment Stock",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Dashboard",
+   "label": "Report Sales",
+   "link_to": "Report Sales",
+   "type": "Report"
+  },
+  {
+   "doc_view": "Dashboard",
+   "label": "Report Pembayaran Penjualan",
+   "link_to": "Pembayaran Penjualan",
+   "type": "Report"
+  },
+  {
+   "doc_view": "List",
+   "label": "Barang Marekting",
+   "link_to": "Item",
+   "stats_filter": "{\n    \"item_group_parent\": [\"in\", [\"Anting\",\"Cat\",\"Cat 1/2\",\"Cincin\",\"Cor\",\"Gelang\",\"Gipsy\",\"Kalung\",\"Liontin\",\"Rantai A\",\"Rantai A Variasi\", \"Rantai Cat\", \"Setelan\", \"Variasi\"]]\n}",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Konfirmasi Payment Return",
+   "link_to": "Konfirmasi Payment Return",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Konfirmasi Return Sub Kategori",
+   "link_to": "Konfirmasi Return Subkategori",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Stock Return Transfer",
+   "link_to": "Stock Return Transfer",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Rekap Piutang Customer",
+   "link_to": "Rekap Piutang Customer",
+   "stats_filter": "",
+   "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "Kartu Piutang",
+   "link_to": "kartu-piutang-custom",
+   "type": "Page"
+  },
+  {
+   "doc_view": "",
+   "label": "Info Proses Penjualan",
+   "link_to": "info-proses-penjuala",
+   "type": "Page"
+  },
+  {
+   "doc_view": "",
+   "label": "List Detail Pembayaran",
+   "link_to": "list-detail-pembayar",
+   "type": "Page"
+  },
+  {
+   "doc_view": "",
+   "label": "Info Janji Bayar",
+   "link_to": "info-janji-bayar",
+   "type": "Page"
+  },
+  {
+   "doc_view": "",
+   "label": "Titipan Transfer Tracking",
+   "link_to": "Titipan Transfer Tracking",
+   "type": "Report"
+  }
+ ]
+}

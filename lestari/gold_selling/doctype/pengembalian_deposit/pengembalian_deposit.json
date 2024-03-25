@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RF-{YYYY}-{#######}",
+ "creation": "2023-12-20 11:37:11.596528",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "customer",
+  "subcustomer",
+  "deposit",
+  "deposit_type",
+  "amount",
+  "gold_amount",
+  "type_emas",
+  "tutupan",
+  "old_tutupan",
+  "mode_of_payment",
+  "idr_account",
+  "gold_account",
+  "company",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pengembalian Deposit",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "deposit",
+   "fieldtype": "Link",
+   "label": "Customer Deposit",
+   "options": "Customer Deposit",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "deposit.idr_left",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount IDR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tutupan",
+   "fieldtype": "Currency",
+   "label": "Tutupan",
+   "mandatory_depends_on": "deposit_type==\"Emas\""
+  },
+  {
+   "depends_on": "deposit_type==\"Emas\";",
+   "fetch_from": "deposit.type_emas",
+   "fieldname": "type_emas",
+   "fieldtype": "Link",
+   "label": "Type Emas",
+   "options": "Basic Nilai Tukar Emas",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "deposit.deposit_type",
+   "fieldname": "deposit_type",
+   "fieldtype": "Select",
+   "label": "Deposit Type",
+   "options": "\nEmas\nIDR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Link",
+   "label": "Mode Of Payment Return",
+   "options": "Mode of Payment"
+  },
+  {
+   "fetch_from": "deposit.account_piutang",
+   "fieldname": "idr_account",
+   "fieldtype": "Link",
+   "label": "IDR Piutang Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "deposit.piutang_gold",
+   "fieldname": "gold_account",
+   "fieldtype": "Link",
+   "label": "Gold Piutang Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "deposit.gold_left",
+   "fieldname": "gold_amount",
+   "fieldtype": "Float",
+   "label": "Amount Gold",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "subcustomer.parent_customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subcustomer",
+   "fieldtype": "Link",
+   "label": "SubCustomer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "deposit.tutupan",
+   "fieldname": "old_tutupan",
+   "fieldtype": "Currency",
+   "label": "Old Tutupan"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-09 14:20:59.013781",
+ "modified_by": "Administrator",
+ "module": "Gold Selling",
+ "name": "Pengembalian Deposit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

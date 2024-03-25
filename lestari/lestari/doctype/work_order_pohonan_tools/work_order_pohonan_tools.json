@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2021-12-27 11:47:15.713930",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mul_id",
+  "resep_mul_karet",
+  "rubber_mould"
+ ],
+ "fields": [
+  {
+   "fieldname": "mul_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Mul ID",
+   "options": "Serial No",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.id_rubber_mould",
+   "fetch_from": "id_rubber_mould.rubber_mould",
+   "fieldname": "resep_mul_karet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Resep Mul Karet",
+   "options": "Resep Mul Karet"
+  },
+  {
+   "fetch_from": "resep_mul_karet.rubber_mould",
+   "fieldname": "rubber_mould",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rubber Mould"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-01-04 15:10:44.766635",
+ "modified_by": "Administrator",
+ "module": "Lestari",
+ "name": "Work Order Pohonan Tools",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

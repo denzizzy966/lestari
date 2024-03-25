@@ -1,0 +1,261 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "JB.#####",
+ "creation": "2023-03-21 12:04:10.962972",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "customer",
+  "customer_name",
+  "customer_group",
+  "subcustomer",
+  "subcustomer_name",
+  "territory",
+  "catatan",
+  "column_break_7",
+  "tanggal_janji",
+  "type_emas",
+  "piutang_gold",
+  "jenis_janji",
+  "sales_bundle",
+  "gold_invoice",
+  "total_invoice",
+  "status_invoice",
+  "outstanding",
+  "tutupan",
+  "total_idr_payment",
+  "total_bayar",
+  "total_emas",
+  "sb_summary",
+  "status",
+  "total_terbayar",
+  "sisa_janji",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": " Posting Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Today",
+   "fieldname": "tanggal_janji",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Tanggal Janji",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gold_invoice.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_group",
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.territory",
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.jenis_janji===\"Pembayaran\"",
+   "fieldname": "gold_invoice",
+   "fieldtype": "Link",
+   "label": "Gold Invoice",
+   "mandatory_depends_on": "eval:doc.jenis_janji===\"Pembayaran\"",
+   "options": "Gold Invoice"
+  },
+  {
+   "fieldname": "total_bayar",
+   "fieldtype": "Currency",
+   "label": "Total Janji Bayar",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gold_invoice.outstanding",
+   "fieldname": "outstanding",
+   "fieldtype": "Float",
+   "label": "Belum Dibayar",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Janji Bayar",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "gold_invoice.tutupan",
+   "fieldname": "tutupan",
+   "fieldtype": "Currency",
+   "label": "Tutupan",
+   "precision": "2"
+  },
+  {
+   "depends_on": "jenis_janji==\"Pembayaran\"",
+   "fetch_from": "gold_invoice.outstanding",
+   "fieldname": "total_invoice",
+   "fieldtype": "Float",
+   "label": "Total Invoice",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.gold_invoice",
+   "fetch_from": "gold_invoice.invoice_status",
+   "fieldname": "status_invoice",
+   "fieldtype": "Select",
+   "label": "Status Invoice",
+   "options": "Unpaid\nPaid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_idr_payment",
+   "fieldtype": "Currency",
+   "label": "Total IDR Payment",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "catatan",
+   "fieldtype": "Text",
+   "label": "Catatan"
+  },
+  {
+   "fieldname": "sb_summary",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Pending\nLunas\nCancelled\nStopped"
+  },
+  {
+   "fieldname": "total_terbayar",
+   "fieldtype": "Currency",
+   "label": "IDR Janji Terbayar",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sisa_janji",
+   "fieldtype": "Currency",
+   "label": "Sisa Janji",
+   "read_only": 1
+  },
+  {
+   "fieldname": "jenis_janji",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Jenis Janji",
+   "options": "\nPembayaran\nDeposit"
+  },
+  {
+   "fieldname": "total_emas",
+   "fieldtype": "Float",
+   "label": "Nilai 24k Emas Janji",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_emas",
+   "fieldtype": "Link",
+   "label": "Kurs Emas",
+   "options": "Basic Nilai Tukar Emas"
+  },
+  {
+   "fetch_from": "type_emas.piutang_emas",
+   "fieldname": "piutang_gold",
+   "fieldtype": "Link",
+   "label": "Piutang Emas",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_bundle",
+   "fieldtype": "Link",
+   "label": "Sales Bundle",
+   "options": "Sales Stock Bundle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subcustomer",
+   "fieldtype": "Link",
+   "label": "SubCustomer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "subcustomer.customer_name",
+   "fieldname": "subcustomer_name",
+   "fieldtype": "Read Only",
+   "label": "SubCustomer Name"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-11-07 13:36:22.060917",
+ "modified_by": "Administrator",
+ "module": "Gold Selling",
+ "name": "Janji Bayar",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer,sisa_janji",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
